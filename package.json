@@ -1,0 +1,49 @@
+{
+  "name": "ssvep-paradigm",
+  "productName": "ssvep-paradigm",
+  "version": "0.0.1",
+  "description": "使用electron编写的博睿康设备兼容的SSVEP范式",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "repository": "https://github.com/puresox/SSVEP-paradigm",
+  "keywords": [
+    "Electron"
+  ],
+  "author": {
+    "name": "puresox",
+    "email": "puresox@163.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "ignore": [
+          "appData"
+        ]
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "win32"
+          ],
+          "config": {
+            "name": "ssvep_paradigm"
+          }
+        }
+      ]
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "12.0.2",
+    "standard": "^16.0.3"
+  }
+}
