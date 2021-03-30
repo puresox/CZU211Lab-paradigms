@@ -25,24 +25,28 @@ ipcMain.on('open-SSVEP', () => {
     global.SSVEPWin.loadFile(path.join(__dirname, './src/SSVEP/SSVEP.html'));
   }
 });
-// // 监听打开editUser窗口的消息
-// ipcMain.on('open-editUser', (event, user) => {
-//   let editUserWin = new BrowserWindow({
-//     width: 400,
-//     height: 300,
-//     webPreferences: {
-//       preload: path.join(__dirname, '../assets/editUser.js')
-//     }
-//   })
-//   editUserWin.webContents.on('dom-ready', () => {
-//     // 传递用户信息
-//     editUserWin.webContents.send('getUser', user)
-//   })
-//   editUserWin.on('close', () => {
-//     editUserWin = null
-//   })
-//   editUserWin.loadFile(path.join(__dirname, '../sections/editUser.html'))
-// })
+
+// 监听打开MI范式窗口的消息
+ipcMain.on('open-MI', () => {
+  if (!global.MIWin) {
+    global.MIWin = new BrowserWindow({
+      fullscreen: true,
+      simpleFullscreen: true,
+      autoHideMenuBar: true,
+      webPreferences: {
+        preload: path.join(__dirname, './src/MI/MI.js'),
+      },
+    });
+    global.MIWin.on('close', () => {
+      global.MIWin = null;
+    });
+    if (!app.isPackaged) {
+      // Open the DevTools.
+      global.MIWin.webContents.openDevTools();
+    }
+    global.MIWin.loadFile(path.join(__dirname, './src/MI/MI.html'));
+  }
+});
 // // 监听打开userDetail窗口的消息
 // ipcMain.on('open-userDetail', (event, user) => {
 //   let userDetailWin = new BrowserWindow({

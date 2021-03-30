@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@serialport/parser-inter-byte-timeout": "^9.0.7",
+    "lodash": "^4.17.21",
     "mousetrap": "^1.6.5",
     "serialport": "^9.0.7"
   },
