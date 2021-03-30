@@ -39,9 +39,11 @@ async function MIRounds() {
     for (let j = 0; j < turns; j += 1) {
       // 左0右1
       const trigger = shuffledArray.pop();
+      pic.className = 'cross';
       await showPicSeconds(2, './cross.png');
       ipcRenderer.send('sendTrigger', trigger);
       const picPath = trigger === 0 ? './leftArrow.png' : './rightArrow.png';
+      pic.className = 'arrow';
       await showPicSeconds(2, picPath);
     }
     if (i < rounds - 1) {

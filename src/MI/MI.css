@@ -4,7 +4,12 @@
   display: none;
 }
 
-img {
+.cross {
+  width: 50px;
+  height: 50px;
+}
+
+.arrow {
   width: 100px;
   height: 100px;
 }
