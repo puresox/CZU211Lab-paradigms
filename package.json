@@ -1,7 +1,7 @@
 {
   "name": "ssvep-paradigm",
   "productName": "ssvep-paradigm",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "使用electron编写的博睿康设备兼容的SSVEP范式",
   "main": "main.js",
   "scripts": {
@@ -25,7 +25,8 @@
       "packagerConfig": {
         "ignore": [
           "appData"
-        ]
+        ],
+        "icon": "./src/public/icon.ico"
       },
       "makers": [
         {

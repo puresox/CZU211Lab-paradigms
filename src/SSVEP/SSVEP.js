@@ -17,8 +17,11 @@ Mousetrap.bind(
 async function flashByRate(rate, s) {
   const [body] = document.getElementsByTagName('body');
   return new Promise((resolve) => {
-    const nIntervId = setInterval(() => {
-      body.style['background-color'] = body.style['background-color'] === 'black' ? 'white' : 'black';
+    const nIntervId = setInterval(async () => {
+      // 闪烁一次
+      body.style['background-color'] = 'black';
+      await sleep(40);
+      body.style['background-color'] = 'white';
     }, 1000 / rate);
     setTimeout(() => {
       clearInterval(nIntervId);
@@ -36,7 +39,7 @@ async function flashRounds(rateArray, duration) {
     await flashByRate(rate, duration);
     if (index < rateArray.length - 1) {
       description.style.display = 'unset';
-      await countdown(10);
+      await countdown(5);
       description.style.display = 'none';
     }
   }
@@ -47,7 +50,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const end = document.getElementById('end');
   await waitKey('enter');
   start.style.display = 'none';
-  await sleep(3 * 1000);
-  await flashRounds([10, 20, 50, 100, 200, 250, 500, 1000], 3 * 1000);
+  await sleep(2 * 1000);
+  await flashRounds([7.5, 10, 12, 15, 20], 10 * 1000);
   end.style.display = 'unset';
 });
