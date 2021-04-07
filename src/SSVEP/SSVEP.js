@@ -35,7 +35,7 @@ async function flashRounds(rateArray, duration) {
   const description = document.getElementById('description');
   for (let index = 0; index < rateArray.length; index += 1) {
     const rate = rateArray[index];
-    ipcRenderer.send('sendTrigger', index);
+    ipcRenderer.send('sendTrigger', index + 1);
     await flashByRate(rate, duration);
     if (index < rateArray.length - 1) {
       description.style.display = 'unset';
