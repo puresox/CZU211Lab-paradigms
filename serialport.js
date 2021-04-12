@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { ipcMain } = require('electron');
+const { ipcMain, dialog } = require('electron');
 const SerialPort = require('serialport');
 const InterByteTimeout = require('@serialport/parser-inter-byte-timeout');
 
@@ -13,7 +13,7 @@ const port = new SerialPort(
   },
   (err) => {
     if (err) {
-      console.error('Error: ', err.message);
+      dialog.showErrorBox('错误', '未检测到打标器，请连接打标器后重新打开此应用');
     }
   },
 );
@@ -27,8 +27,7 @@ parser.on('data', console.log);
 ipcMain.on('sendTrigger', (event, value) => {
   port.write([0x01, 0xE1, 0x01, 0x00, value], (err) => {
     if (err) {
-      console.log('Error on write: ', err.message);
+      dialog.showErrorBox('错误', err.message);
     }
-    console.error('message written');
   });
 });
