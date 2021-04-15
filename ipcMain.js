@@ -1,50 +1,48 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const {
-  ipcMain, BrowserWindow, dialog, screen, app,
-} = require('electron');
-const path = require('path');
+const { ipcMain, BrowserWindow, dialog, screen, app } = require("electron");
+const path = require("path");
 
 // 监听打开SSVEP范式窗口的消息
-ipcMain.on('open-SSVEP', () => {
+ipcMain.on("open-SSVEP", () => {
   if (!global.SSVEPWin) {
     global.SSVEPWin = new BrowserWindow({
       fullscreen: true,
       simpleFullscreen: true,
       autoHideMenuBar: true,
       webPreferences: {
-        preload: path.join(__dirname, './src/SSVEP/SSVEP.js'),
+        preload: path.join(__dirname, "./src/SSVEP/SSVEP.js"),
       },
     });
-    global.SSVEPWin.on('close', () => {
+    global.SSVEPWin.on("close", () => {
       global.SSVEPWin = null;
     });
     if (!app.isPackaged) {
       // Open the DevTools.
       global.SSVEPWin.webContents.openDevTools();
     }
-    global.SSVEPWin.loadFile(path.join(__dirname, './src/SSVEP/SSVEP.html'));
+    global.SSVEPWin.loadFile(path.join(__dirname, "./src/SSVEP/SSVEP.html"));
   }
 });
 
 // 监听打开MI范式窗口的消息
-ipcMain.on('open-MI', () => {
+ipcMain.on("open-MI", () => {
   if (!global.MIWin) {
     global.MIWin = new BrowserWindow({
       fullscreen: true,
       simpleFullscreen: true,
       autoHideMenuBar: true,
       webPreferences: {
-        preload: path.join(__dirname, './src/MI/MI.js'),
+        preload: path.join(__dirname, "./src/MI/MI.js"),
       },
     });
-    global.MIWin.on('close', () => {
+    global.MIWin.on("close", () => {
       global.MIWin = null;
     });
     if (!app.isPackaged) {
       // Open the DevTools.
       global.MIWin.webContents.openDevTools();
     }
-    global.MIWin.loadFile(path.join(__dirname, './src/MI/MI.html'));
+    global.MIWin.loadFile(path.join(__dirname, "./src/MI/MI.html"));
   }
 });
 // // 监听打开userDetail窗口的消息

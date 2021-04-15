@@ -1,4 +1,4 @@
-const Mousetrap = require('mousetrap');
+const Mousetrap = require("mousetrap");
 
 module.exports = {
   async sleep(ms) {
@@ -7,7 +7,7 @@ module.exports = {
 
   // 倒计时
   async countdown(s) {
-    const countdownNode = document.getElementById('countdown');
+    const countdownNode = document.getElementById("countdown");
     let times = s;
     countdownNode.textContent = times;
     return new Promise((resolve) => {
@@ -24,9 +24,9 @@ module.exports = {
   },
 
   // 等待按键继续
-  async  waitKey(key) {
+  async waitKey(key) {
     return new Promise((resolve) => {
-      Mousetrap.bind(key, resolve, 'keyup');
+      Mousetrap.bind(key, resolve, "keyup");
     });
   },
 };
