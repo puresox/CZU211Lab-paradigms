@@ -5,7 +5,7 @@ const Mousetrap = require("mousetrap");
 const _ = require("lodash");
 const { sleep, countdown, waitKey } = require("../public/tools");
 
-const rounds = 5;
+const rounds = 10;
 const turns = 8;
 
 // 打乱箭头顺序
@@ -49,7 +49,7 @@ async function MIRounds() {
     if (i < rounds - 1) {
       pic.style.display = "none";
       description.style.display = "unset";
-      await countdown(10);
+      await countdown(5);
       description.style.display = "none";
       pic.style.display = "unset";
     }

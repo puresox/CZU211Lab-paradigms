@@ -51,6 +51,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   await waitKey("enter");
   start.style.display = "none";
   await sleep(2 * 1000);
-  await flashRounds([7.5, 10, 12, 15, 20], 10 * 1000);
+  await flashRounds([7.5, 10, 12, 15, 20], 5 * 1000);
   end.style.display = "unset";
 });

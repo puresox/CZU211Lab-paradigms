@@ -1,6 +1,6 @@
 {
-  "name": "ssvep-paradigm",
-  "productName": "ssvep-paradigm",
+  "name": "czu211lab-paradigms",
+  "productName": "CZU211Lab-paradigms",
   "version": "0.1.2",
   "description": "使用electron编写的博睿康设备兼容的SSVEP范式",
   "main": "main.js",
@@ -11,7 +11,7 @@
     "publish": "electron-forge publish",
     "install": "electron-rebuild"
   },
-  "repository": "https://github.com/puresox/SSVEP-paradigm",
+  "repository": "https://github.com/puresox/CZU211Lab-paradigms",
   "keywords": [
     "Electron"
   ],
@@ -35,7 +35,7 @@
             "win32"
           ],
           "config": {
-            "name": "ssvep_paradigm"
+            "name": "CZU211Lab-paradigms"
           }
         }
       ]
