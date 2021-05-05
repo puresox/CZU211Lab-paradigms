@@ -39,7 +39,7 @@ async function flashRounds(rateArray, duration) {
     await flashByRate(rate, duration);
     if (index < rateArray.length - 1) {
       description.style.display = "unset";
-      await countdown(5);
+      await countdown(5); // 休息5s
       description.style.display = "none";
     }
   }

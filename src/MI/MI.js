@@ -27,8 +27,12 @@ Mousetrap.bind(
 // 显示图片s秒
 async function showPicSeconds(s, picPath) {
   const pic = document.getElementById("pic");
+  pic.style.display = "none";
   pic.src = picPath;
+  pic.style.display = "unset";
   await sleep(s * 1000);
+  pic.style.display = "none";
+  await sleep(10);
 }
 
 // 本实验共五轮，每轮八次试验，每次试验包括2秒的准备时间和2秒的正式试验
