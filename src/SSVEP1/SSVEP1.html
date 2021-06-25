@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./SSVEP1.css" />
+    <link rel="stylesheet" href="../public/paradigm.css" />
+    <title>SSVEP1</title>
+  </head>
+  <body>
+    <div id="start">
+      <h1>欢迎参加本次实验！</h1>
+      <p>本次实验共五轮。</p>
+      <p>实验过程中请避免眨眼和其他动作，保持放松。</p>
+      <p>（按回车键继续）</p>
+    </div>
+    <div id="description">
+      <p>本轮试验结束，请休息5s后进行下一轮试验</p>
+      <p>倒计时：<strong id="countdown"></strong></p>
+    </div>
+    <div id="end">
+      <p>实验结束，感谢您的参与！</p>
+    </div>
+    <div id="rings">
+      <div id="ringRow1" class="ringRow">
+        <div id="ring1" class="ring">
+          <img id="cross1" class="cross" src="./cross.png" alt="" />
+        </div>
+        <div id="ring2" class="ring">
+          <img id="cross2" class="cross" src="./cross.png" alt="" />
+        </div>
+      </div>
+      <div id="ringsRow2" class="ringRow">
+        <div id="ring3" class="ring">
+          <img id="cross3" class="cross" src="./cross.png" alt="" />
+        </div>
+        <div id="ring4" class="ring">
+          <img id="cross4" class="cross" src="./cross.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

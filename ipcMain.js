@@ -24,6 +24,28 @@ ipcMain.on("open-SSVEP", () => {
   }
 });
 
+// 监听打开SSVEP1范式窗口的消息
+ipcMain.on("open-SSVEP1", () => {
+  if (!global.SSVEP1Win) {
+    global.SSVEP1Win = new BrowserWindow({
+      fullscreen: true,
+      simpleFullscreen: true,
+      autoHideMenuBar: true,
+      webPreferences: {
+        preload: path.join(__dirname, "./src/SSVEP1/SSVEP1.js"),
+      },
+    });
+    global.SSVEP1Win.on("close", () => {
+      global.SSVEP1Win = null;
+    });
+    if (!app.isPackaged) {
+      // Open the DevTools.
+      global.SSVEP1Win.webContents.openDevTools();
+    }
+    global.SSVEP1Win.loadFile(path.join(__dirname, "./src/SSVEP1/SSVEP1.html"));
+  }
+});
+
 // 监听打开MI范式窗口的消息
 ipcMain.on("open-MI", () => {
   if (!global.MIWin) {
