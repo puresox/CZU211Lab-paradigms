@@ -13,7 +13,7 @@ p {
   display: none;
 }
 
-#rings {
+#squares {
   height: 100%;
   width: 100%;
   display: none;
@@ -24,7 +24,7 @@ p {
   align-content: center;
 }
 
-.ringRow {
+.squareRow {
   height: 50%;
   width: 100%;
   display: flex;
@@ -35,12 +35,10 @@ p {
   align-content: center;
 }
 
-.ring {
-  width: 30vh;
-  height: 30vh;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 50px solid black;
+.square {
+  width: 25vh;
+  height: 25vh;
+  background-color: black;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

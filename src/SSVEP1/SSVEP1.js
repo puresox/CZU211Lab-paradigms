@@ -34,23 +34,23 @@ async function showPicSeconds(num, s) {
 
 // 闪烁s秒
 async function flashByRate(rateArray, s) {
-  const ringsArray = document.getElementsByClassName("ring");
+  const squaresArray = document.getElementsByClassName("square");
   const nIntervId = [];
   return new Promise((resolve) => {
     rateArray.forEach((rate, index) => {
       nIntervId.push(
         setInterval(async () => {
           // 闪烁一次
-          ringsArray[index].style["border-color"] = "white";
+          squaresArray[index].style["background-color"] = "white";
           await sleep(40);
-          ringsArray[index].style["border-color"] = "black";
+          squaresArray[index].style["background-color"] = "black";
         }, 1000 / rate)
       );
     });
     setTimeout(() => {
       rateArray.forEach((_, index) => {
         clearInterval(nIntervId[index]);
-        ringsArray[index].style["border-color"] = "black";
+        squaresArray[index].style["background-color"] = "black";
       });
       resolve();
     }, s);
@@ -59,14 +59,14 @@ async function flashByRate(rateArray, s) {
 
 async function flashRounds(rateArray, duration) {
   const description = document.getElementById("description");
-  const rings = document.getElementById("rings");
+  const squares = document.getElementById("squares");
   for (let index = 0; index < rounds; index += 1) {
     const trigger = shuffledArray.pop();
-    rings.style.display = "flex";
+    squares.style.display = "flex";
     await showPicSeconds(trigger + 1, 3);
     ipcRenderer.send("sendTrigger", trigger + 1);
     await flashByRate(rateArray, duration);
-    rings.style.display = "none";
+    squares.style.display = "none";
     if (index < rounds - 1) {
       description.style.display = "unset";
       await countdown(5); // 休息5s

@@ -1,7 +1,7 @@
 {
   "name": "czu211lab-paradigms",
   "productName": "CZU211Lab-paradigms",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "使用electron编写的博睿康设备兼容的范式",
   "main": "main.js",
   "scripts": {
