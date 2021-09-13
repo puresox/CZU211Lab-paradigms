@@ -45,17 +45,17 @@
     "@serialport/parser-inter-byte-timeout": "^9.0.7",
     "lodash": "^4.17.21",
     "mousetrap": "^1.6.5",
-    "serialport": "^9.2.0"
+    "serialport": "^9.2.1"
   },
   "devDependencies": {
-    "@electron-forge/cli": "6.0.0-beta.57",
-    "@electron-forge/maker-zip": "6.0.0-beta.57",
-    "electron": "^13.1.4",
-    "electron-rebuild": "^2.3.5",
-    "eslint": "^7.29.0",
+    "@electron-forge/cli": "6.0.0-beta.61",
+    "@electron-forge/maker-zip": "6.0.0-beta.61",
+    "electron": "^14.0.0",
+    "electron-rebuild": "^3.2.3",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "prettier": "^2.3.1"
+    "eslint-plugin-import": "^2.24.2",
+    "prettier": "^2.4.0"
   }
 }
