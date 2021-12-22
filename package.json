@@ -1,5 +1,9 @@
 {
   "name": "czu211lab-paradigms",
+  "engines": {
+    "node": ">=10",
+    "pnpm": ">=3"
+  },
   "productName": "CZU211Lab-paradigms",
   "version": "0.2.1",
   "description": "使用electron编写的博睿康设备兼容的范式",
@@ -42,20 +46,20 @@
     }
   },
   "dependencies": {
-    "@serialport/parser-inter-byte-timeout": "^9.0.7",
+    "@serialport/parser-inter-byte-timeout": "^9.2.4",
     "lodash": "^4.17.21",
     "mousetrap": "^1.6.5",
-    "serialport": "^9.2.1"
+    "serialport": "^9.2.8"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.61",
     "@electron-forge/maker-zip": "6.0.0-beta.61",
-    "electron": "^14.0.0",
-    "electron-rebuild": "^3.2.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "electron": "^16.0.5",
+    "electron-rebuild": "^3.2.5",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "prettier": "^2.4.0"
+    "eslint-plugin-import": "^2.25.3",
+    "prettier": "^2.5.1"
   }
 }
